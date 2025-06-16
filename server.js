@@ -15,6 +15,10 @@ app.use(express.json());
 const authRoutes = require('./routes/authRoutes');
 app.use('/api/auth', authRoutes);
 
+const productRoutes = require('./routes/productRoutes');
+app.use('/api/products', productRoutes);
+
+
 
 app.get('/api/test', (req, res) => {
   res.json({ message: 'Snake Store API is working 🐍' });
