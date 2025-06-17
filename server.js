@@ -24,6 +24,10 @@ app.use('/api/cart', cartRoutes);
 const categoryRoutes = require('./routes/categoryRoutes');
 app.use('/api/categories', categoryRoutes);
 
+const orderRoutes = require('./routes/orderRoutes');
+app.use('/api/orders', orderRoutes);
+
+
 
 app.get('/api/test', (req, res) => {
   res.json({ message: 'Snake Store API is working 🐍' });
