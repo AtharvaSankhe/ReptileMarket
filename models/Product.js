@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const productSchema = new mongoose.Schema(
   {
@@ -7,8 +7,8 @@ const productSchema = new mongoose.Schema(
       required: true,
     },
     category: {
-      type: String,
-      enum: ['Reticulated Pythons', 'Ball Pythons', 'Boa Constrictors'],
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Category",
       required: true,
     },
     price: {
@@ -21,8 +21,8 @@ const productSchema = new mongoose.Schema(
     },
     gender: {
       type: String,
-      enum: ['Male', 'Female', 'Unknown'],
-      default: 'Unknown',
+      enum: ["Male", "Female", "Unknown"],
+      default: "Unknown",
     },
     description: {
       type: String,
@@ -40,4 +40,4 @@ const productSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-module.exports = mongoose.model('Product', productSchema);
+module.exports = mongoose.model("Product", productSchema);
